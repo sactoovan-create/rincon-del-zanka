@@ -11,6 +11,7 @@
 <meta property="og:image" content="https://sactoovan-create.github.io/rincon-del-zanka/img/og.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="img/emblema.png">
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -189,11 +190,11 @@
   footer .mini a { color: var(--naranja); }
 
   /* reveal */
-  .rev { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
-  .rev.visto { opacity: 1; transform: none; }
+  .js .rev { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  .js .rev.visto { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .rev { opacity: 1; transform: none; transition: none; }
+    .js .rev { opacity: 1; transform: none; transition: none; }
   }
 
   @media (max-width: 900px) {
@@ -382,6 +383,7 @@
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('abierto')));
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.rev').forEach(el => io.observe(el));
+  setTimeout(() => document.querySelectorAll('.rev:not(.visto)').forEach(el => el.classList.add('visto')), 1500);
 </script>
 </body>
 </html>
