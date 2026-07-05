@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Rincón del Zanka — Mariscos estilo Zihuatanejo en Morelia</title>
+<meta name="description" content="El sabor del muelle de Zihua, en Morelia. Aguachiles, tiritas de pez vela, zarandeados y micheladas. Vie–Dom 12:00–6:00 pm · José Gorostiza 179, Lomas de Santa María.">
+<meta name="theme-color" content="#0F2437">
+<meta property="og:title" content="El Rincón del Zanka — Mariscos estilo Zihua en Morelia">
+<meta property="og:description" content="Del muelle de Zihuatanejo a tu mesa. Todo se prepara al momento. Vie–Dom 12:00–6:00 pm.">
+<meta property="og:image" content="https://sactoovan-create.github.io/rincon-del-zanka/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/emblema.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tinta: #16334A;
+    --tinta-suave: #52657A;
+    --papel: #FBF7EF;
+    --ocre: #BE741F;
+    --naranja: #EBA33D;
+    --mar: #33648C;
+    --arena: #8C7C66;
+    --linea: #E3D9C8;
+    --fondo: #0F2437;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Work Sans', system-ui, sans-serif; color: var(--tinta); background: var(--papel); }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; gap: 26px;
+    padding: 14px 28px;
+    transition: background .3s, box-shadow .3s;
+  }
+  nav.solida { background: rgba(15,36,55,.96); box-shadow: 0 2px 18px rgba(0,0,0,.25); }
+  nav .marca { display: flex; align-items: center; gap: 10px; margin-right: auto; }
+  nav .marca img { height: 44px; width: auto; }
+  nav .marca span {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 17px; color: var(--papel);
+    letter-spacing: .04em; white-space: nowrap;
+  }
+  nav .links { display: flex; gap: 22px; align-items: center; }
+  nav .links a {
+    color: var(--papel); font-size: 13px; font-weight: 500;
+    letter-spacing: .1em; text-transform: uppercase; opacity: .88;
+  }
+  nav .links a:hover { opacity: 1; color: var(--naranja); }
+  .btn-wa {
+    background: var(--naranja); color: var(--tinta) !important;
+    padding: 10px 18px; border-radius: 100px; font-weight: 600 !important; opacity: 1 !important;
+  }
+  .btn-wa:hover { filter: brightness(1.06); color: var(--tinta) !important; }
+  .burger { display: none; background: none; border: none; color: var(--papel); font-size: 26px; cursor: pointer; }
+
+  /* ---------- hero ---------- */
+  header.hero {
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    background:
+      linear-gradient(rgba(15,36,55,.55), rgba(15,36,55,.68)),
+      url('img/hero.jpg') center / cover no-repeat;
+    color: var(--papel);
+    padding: 110px 24px 80px;
+  }
+  .hero img.logo { width: min(430px, 78vw); margin-bottom: 30px; filter: drop-shadow(0 4px 24px rgba(0,0,0,.35)) brightness(0) invert(1); opacity: .97; }
+  .hero .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: .34em; text-transform: uppercase;
+    color: var(--naranja); margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif; font-optical-sizing: auto; font-weight: 600;
+    font-size: clamp(34px, 6vw, 62px); line-height: 1.12; letter-spacing: .01em;
+    max-width: 17ch; text-wrap: balance; margin-bottom: 26px;
+  }
+  .hero p.baja {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(16px, 2.2vw, 20px);
+    max-width: 44ch; line-height: 1.6; opacity: .94; margin-bottom: 38px;
+  }
+  .cta-fila { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .cta {
+    padding: 15px 30px; border-radius: 100px; font-weight: 600; font-size: 15px;
+    letter-spacing: .04em; transition: transform .15s, filter .15s;
+  }
+  .cta:hover { transform: translateY(-2px); }
+  .cta.principal { background: var(--naranja); color: var(--tinta); }
+  .cta.fantasma { border: 1.5px solid rgba(251,247,239,.7); color: var(--papel); }
+  .cta.fantasma:hover { border-color: var(--naranja); color: var(--naranja); }
+
+  /* ---------- franja de datos ---------- */
+  .franja {
+    background: var(--fondo); color: var(--papel);
+    border-top: 1px solid rgba(251,247,239,.12);
+  }
+  .franja .wrap {
+    display: flex; gap: 18px 48px; flex-wrap: wrap; justify-content: center;
+    padding: 22px 24px; font-size: 13.5px; letter-spacing: .05em;
+  }
+  .franja b { color: var(--naranja); font-weight: 600; margin-right: 8px; letter-spacing: .12em; text-transform: uppercase; font-size: 11.5px; }
+
+  /* ---------- secciones ---------- */
+  section { padding: 92px 0; }
+  .eyebrow-s {
+    display: block; font-size: 12px; font-weight: 600; letter-spacing: .28em;
+    text-transform: uppercase; color: var(--ocre); margin-bottom: 14px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(30px, 4.4vw, 44px);
+    line-height: 1.15; letter-spacing: .008em; text-wrap: balance; margin-bottom: 22px;
+  }
+  .prosa { font-size: 16.5px; line-height: 1.75; color: var(--tinta-suave); max-width: 58ch; }
+  .prosa + .prosa { margin-top: 16px; }
+  .prosa strong { color: var(--tinta); }
+
+  /* historia: dos columnas */
+  .dos-col { display: grid; grid-template-columns: 1.05fr .95fr; gap: 64px; align-items: center; }
+  .dos-col .foto { border-radius: 10px; overflow: hidden; box-shadow: 0 24px 60px rgba(22,51,74,.22); }
+
+  /* insignias */
+  #imperdibles { background: var(--fondo); color: var(--papel); }
+  #imperdibles .eyebrow-s { color: var(--naranja); }
+  #imperdibles .prosa { color: #AFC2CE; }
+  .grid-platillos {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 48px;
+  }
+  .tarjeta {
+    background: #14304a;
+    border: 1px solid rgba(251,247,239,.09);
+    border-radius: 12px; overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .tarjeta:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.35); }
+  .tarjeta img { aspect-ratio: 1; object-fit: cover; }
+  .tarjeta .info { padding: 18px 20px 20px; display: flex; align-items: baseline; gap: 10px; }
+  .tarjeta h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 19px; letter-spacing: .01em; }
+  .tarjeta .hilo { flex: 1; }
+  .tarjeta .precio { font-weight: 600; color: var(--naranja); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tarjeta .precio em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 13px; }
+
+  /* cartas */
+  .grid-cartas { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 44px; }
+  .carta-card {
+    border: 1px solid var(--linea); border-radius: 12px; padding: 38px 36px;
+    background: #fff; transition: transform .2s, box-shadow .2s;
+  }
+  .carta-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(22,51,74,.14); }
+  .carta-card .tag { font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--ocre); }
+  .carta-card h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 26px; margin: 10px 0 10px; }
+  .carta-card p { color: var(--tinta-suave); font-size: 15px; line-height: 1.65; margin-bottom: 24px; }
+  .carta-card .cta { display: inline-block; background: var(--tinta); color: var(--papel); font-size: 14px; padding: 12px 24px; }
+  .carta-card .cta:hover { background: var(--mar); }
+
+  /* charolas */
+  #charolas .dos-col { grid-template-columns: .95fr 1.05fr; }
+  #charolas .cta { display: inline-block; background: #25D366; color: #0b3d22; margin-top: 26px; }
+
+  /* galería */
+  .grid-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+  .grid-galeria img { aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; transition: transform .25s; }
+  .grid-galeria img:hover { transform: scale(1.025); }
+
+  /* visítanos */
+  #visitanos { background: #F3ECDF; }
+  .grid-visita { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; align-items: stretch; }
+  .grid-visita iframe { width: 100%; height: 100%; min-height: 360px; border: 0; border-radius: 10px; filter: saturate(.9); }
+  .dato-v { padding: 18px 0; border-bottom: 1px solid var(--linea); }
+  .dato-v:first-child { padding-top: 4px; }
+  .dato-v b {
+    display: block; font-size: 11px; font-weight: 600; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--ocre); margin-bottom: 6px;
+  }
+  .dato-v span, .dato-v a { font-size: 16.5px; line-height: 1.55; }
+  .dato-v a { text-decoration: underline; text-decoration-color: var(--linea); text-underline-offset: 4px; }
+  .dato-v a:hover { color: var(--mar); }
+
+  /* footer */
+  footer { background: var(--fondo); color: #AFC2CE; padding: 56px 0 40px; text-align: center; }
+  footer img { height: 78px; margin: 0 auto 18px; filter: brightness(0) invert(1); opacity: .92; }
+  footer .lema { font-family: 'Fraunces', serif; font-style: italic; font-size: 16px; color: var(--papel); margin-bottom: 18px; }
+  footer .mini { font-size: 12.5px; letter-spacing: .06em; line-height: 2; }
+  footer .mini a { color: var(--naranja); }
+
+  /* reveal */
+  .rev { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  .rev.visto { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .rev { opacity: 1; transform: none; transition: none; }
+  }
+
+  @media (max-width: 900px) {
+    nav .links {
+      position: fixed; inset: 0; background: rgba(15,36,55,.98);
+      flex-direction: column; justify-content: center; gap: 30px;
+      transform: translateX(100%); transition: transform .3s ease;
+    }
+    nav .links.abierto { transform: none; }
+    nav .links a { font-size: 17px; }
+    .burger { display: block; z-index: 60; }
+    .dos-col, #charolas .dos-col, .grid-cartas, .grid-visita { grid-template-columns: 1fr; gap: 34px; }
+    .grid-platillos { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-galeria { grid-template-columns: 1fr 1fr; }
+    section { padding: 64px 0; }
+  }
+  @media (max-width: 540px) {
+    .grid-platillos { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="marca" href="#inicio">
+    <img src="img/emblema.png" alt="">
+    <span>El Rincón del Zanka</span>
+  </a>
+  <button class="burger" id="burger" aria-label="Menú">☰</button>
+  <div class="links" id="links">
+    <a href="#historia">Historia</a>
+    <a href="#imperdibles">Imperdibles</a>
+    <a href="#cartas">La carta</a>
+    <a href="#charolas">Charolas</a>
+    <a href="#galeria">Galería</a>
+    <a href="#visitanos">Visítanos</a>
+    <a class="btn-wa" href="https://wa.me/524772401653?text=Hola%2C%20quiero%20pedir" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <img class="logo" src="img/logo.png" alt="El Rincón del Zanka — Mariscos · Zihua">
+  <p class="eyebrow">Mariscos estilo Zihuatanejo · Morelia</p>
+  <h1>El sabor del muelle de Zihua, en Morelia</h1>
+  <p class="baja">Aquí no hay prisa ni congelador: hay muelle, limón y lumbre. Todo se prepara en el momento en que lo pides.</p>
+  <div class="cta-fila">
+    <a class="cta principal" href="https://sactoovan-create.github.io/carta-zanka/" target="_blank" rel="noopener">Ver la carta</a>
+    <a class="cta fantasma" href="#visitanos">Cómo llegar</a>
+  </div>
+</header>
+
+<div class="franja">
+  <div class="wrap">
+    <span><b>Horario</b> Viernes a domingo · 12:00 – 6:00 pm</span>
+    <span><b>Dirección</b> José Gorostiza 179 · Lomas de Santa María</span>
+    <span><b>WhatsApp</b> 477 240 1653</span>
+  </div>
+</div>
+
+<section id="historia">
+  <div class="wrap dos-col">
+    <div class="rev">
+      <span class="eyebrow-s">Historia</span>
+      <h2>«Zanca» es un saludo, y este rincón es su casa</h2>
+      <p class="prosa">En el puerto, <strong>«zanca» es el saludo de los de Zihuatanejo</strong>: los que crecieron entre pangas, limón y pescado recién bajado del muelle. Este rincón es un pedazo de ese Zihua — sus recetas, su pescado y su calma — ahora en el sur de Morelia.</p>
+      <p class="prosa">Nuestro pescado llega del muelle de Zihuatanejo: pez vela para las tiritas que inventó el puerto, huachinango según la pesca del día y pulpo criollo de La Salada, Guerrero. Por eso hay temporadas, por eso hay precio del día — <strong>y por eso sabe así</strong>.</p>
+      <p class="prosa">Cada platillo se empieza a hacer cuando tú lo pides. Tarda entre 25 y 35 minutos: el tiempo que merece la frescura, y el pretexto perfecto para una michelada.</p>
+    </div>
+    <div class="foto rev"><img src="img/historia.jpg" alt="Tiritas de pez vela estilo Zihuatanejo" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="imperdibles">
+  <div class="wrap">
+    <div class="rev">
+      <span class="eyebrow-s">Insignias</span>
+      <h2>Los imperdibles de la casa</h2>
+      <p class="prosa">Los platillos que nos dieron nombre y los que nadie deja ir. La carta completa tiene más de cuarenta — estos seis son la puerta de entrada.</p>
+    </div>
+    <div class="grid-platillos">
+      <div class="tarjeta rev"><img src="img/platillos/tiritas.jpg" alt="Tiritas de pez vela" loading="lazy"><div class="info"><h3>Tiritas de pez vela</h3><span class="hilo"></span><span class="precio">150</span></div></div>
+      <div class="tarjeta rev"><img src="img/platillos/aguachile.jpg" alt="Aguachile de camarón" loading="lazy"><div class="info"><h3>Aguachile de camarón</h3><span class="hilo"></span><span class="precio">170</span></div></div>
+      <div class="tarjeta rev"><img src="img/platillos/pulpo_enamorado.jpg" alt="Pulpo enamorado" loading="lazy"><div class="info"><h3>Pulpo enamorado</h3><span class="hilo"></span><span class="precio">210</span></div></div>
+      <div class="tarjeta rev"><img src="img/platillos/coco.jpg" alt="Camarones al coco" loading="lazy"><div class="info"><h3>Camarones al coco</h3><span class="hilo"></span><span class="precio">220</span></div></div>
+      <div class="tarjeta rev"><img src="img/platillos/momia.jpg" alt="Camarones momia" loading="lazy"><div class="info"><h3>Camarones momia</h3><span class="hilo"></span><span class="precio">240</span></div></div>
+      <div class="tarjeta rev"><img src="img/platillos/huachinango.jpg" alt="Huachinango entero al gusto" loading="lazy"><div class="info"><h3>Huachinango al gusto</h3><span class="hilo"></span><span class="precio">450 <em>/ kg</em></span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="cartas">
+  <div class="wrap">
+    <div class="rev">
+      <span class="eyebrow-s">La carta</span>
+      <h2>Escoge cómo se te antoja</h2>
+    </div>
+    <div class="grid-cartas">
+      <div class="carta-card rev">
+        <span class="tag">Para la mesa</span>
+        <h3>La carta completa</h3>
+        <p>Barra fría con tostadas y órdenes, aguachiles, lo zarandeado, micheladas y toda la barra. Precios y platillos siempre al día.</p>
+        <a class="cta" href="https://sactoovan-create.github.io/carta-zanka/" target="_blank" rel="noopener">Abrir la carta</a>
+      </div>
+      <div class="carta-card rev">
+        <span class="tag">Por litro y medio litro</span>
+        <h3>Carta para llevar</h3>
+        <p>La barra fría empacada al momento — todos los litros y medios litros incluyen galletas y tostadas. Calientes por orden.</p>
+        <a class="cta" href="https://sactoovan-create.github.io/carta-zanka/llevar.html" target="_blank" rel="noopener">Ver para llevar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="charolas">
+  <div class="wrap dos-col">
+    <div class="foto rev"><img src="img/charolas.jpg" alt="Charola de mariscos para fiestas" loading="lazy"></div>
+    <div class="rev">
+      <span class="eyebrow-s">Para tu fiesta</span>
+      <h2>Charolas por encargo</h2>
+      <p class="prosa">Tiritas, aguachiles, ceviches, camarones momia y todo lo que se te antoje, armado en charolas para tu reunión. Nos escribes, nos dices cuántos son, y la armamos a la medida de tu evento.</p>
+      <a class="cta" href="https://wa.me/524772401653?text=Hola%2C%20quiero%20cotizar%20una%20charola%20para%20fiesta" target="_blank" rel="noopener">Cotizar mi charola</a>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <div class="rev">
+      <span class="eyebrow-s">Galería</span>
+      <h2>Del muelle a tu mesa</h2>
+    </div>
+    <div class="grid-galeria">
+      <img class="rev" src="img/galeria/ceviche.jpg" alt="Ceviche de camarón" loading="lazy">
+      <img class="rev" src="img/galeria/sashimi.jpg" alt="Sashimi de atún" loading="lazy">
+      <img class="rev" src="img/galeria/mojo.jpg" alt="Camarones al mojo de ajo" loading="lazy">
+      <img class="rev" src="img/galeria/diabla.jpg" alt="Camarones a la diabla" loading="lazy">
+      <img class="rev" src="img/galeria/aguachile_molcajete.jpg" alt="Aguachile mango habanero" loading="lazy">
+      <img class="rev" src="img/galeria/salmon.jpg" alt="Carpaccio de salmón" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="visitanos">
+  <div class="wrap">
+    <div class="rev">
+      <span class="eyebrow-s">Visítanos</span>
+      <h2>Estamos en el sur de Morelia</h2>
+    </div>
+    <div class="grid-visita">
+      <div class="rev">
+        <div class="dato-v"><b>Dirección</b><span>Calle José Gorostiza 179, Lomas de Santa María<br>Morelia, Michoacán</span></div>
+        <div class="dato-v"><b>Horario</b><span>Viernes, sábado y domingo · 12:00 a 6:00 pm</span></div>
+        <div class="dato-v"><b>Pedidos y encargos</b><a href="https://wa.me/524772401653?text=Hola%2C%20quiero%20pedir" target="_blank" rel="noopener">WhatsApp 477 240 1653</a></div>
+        <div class="dato-v"><b>Síguenos</b><a href="https://www.tiktok.com/@elrincondelzanka" target="_blank" rel="noopener">TikTok · @elrincondelzanka</a></div>
+      </div>
+      <div class="rev">
+        <iframe title="Mapa: El Rincón del Zanka" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Calle+Jos%C3%A9+Gorostiza+179%2C+Lomas+de+Santa+Mar%C3%ADa%2C+Morelia%2C+Michoac%C3%A1n&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="El Rincón del Zanka">
+    <p class="lema">Aquí no hay prisa ni congelador: hay muelle, limón y lumbre.</p>
+    <p class="mini">
+      José Gorostiza 179 · Lomas de Santa María · Morelia, Michoacán · Vie–Dom 12:00–6:00 pm<br>
+      <a href="https://sactoovan-create.github.io/carta-zanka/" target="_blank" rel="noopener">La carta</a> ·
+      <a href="https://sactoovan-create.github.io/carta-zanka/llevar.html" target="_blank" rel="noopener">Para llevar</a> ·
+      <a href="https://wa.me/524772401653" target="_blank" rel="noopener">WhatsApp</a> ·
+      <a href="https://www.tiktok.com/@elrincondelzanka" target="_blank" rel="noopener">TikTok</a><br>
+      Los platillos crudos y curtidos se sirven bajo consideración del comensal · Precios en pesos, IVA incluido
+    </p>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const links = document.getElementById('links');
+  const burger = document.getElementById('burger');
+  addEventListener('scroll', () => nav.classList.toggle('solida', scrollY > 40), { passive: true });
+  nav.classList.toggle('solida', scrollY > 40);
+  burger.addEventListener('click', () => links.classList.toggle('abierto'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('abierto')));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.rev').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
